@@ -9,12 +9,12 @@ const CONTACT_LINKS = [
   },
   {
     label: 'LinkedIn',
-    display: 'linkedin.com/in/rubychouxkim',
+    display: 'linkedin.com/in/rubychoux',
     href: 'https://linkedin.com/in/rubychoux',
     external: true,
   },
   {
-    label: 'GitHub',
+    label: 'GitHub',git 
     display: 'github.com/rubychoux',
     href: 'https://github.com/rubychoux',
     external: true,
