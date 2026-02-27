@@ -1,0 +1,81 @@
+/* ─── Section ────────────────────────────────────────────────────────── */
+.contact {
+  border-top: 1px solid var(--color-border);
+}
+
+.contact-inner {
+  padding-top: var(--space-3xl);
+  padding-bottom: var(--space-3xl);
+}
+
+/* ─── Headline ───────────────────────────────────────────────────────── */
+.contact-headline {
+  font-size: clamp(2rem, 5.5vw, 3.75rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--color-text);
+  line-height: 1.05;
+  margin-bottom: var(--space-md);
+}
+
+.contact-subtext {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-bottom: var(--space-2xl);
+  max-width: 420px;
+}
+
+/* ─── Link list ──────────────────────────────────────────────────────── */
+.contact-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--color-border);
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+  padding: var(--space-lg) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.contact-item-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-subtle);
+  min-width: 72px;
+  flex-shrink: 0;
+}
+
+.contact-item-value {
+  font-size: 0.925rem;
+  color: var(--color-text-muted);
+  transition: color var(--transition);
+  letter-spacing: 0.01em;
+}
+
+.contact-item-value:hover {
+  color: var(--color-accent);
+}
+
+/* ─── Footer line ────────────────────────────────────────────────────── */
+.contact-footer {
+  margin-top: var(--space-3xl);
+  font-size: 0.72rem;
+  color: var(--color-text-subtle);
+  letter-spacing: 0.04em;
+}
+
+/* ─── Mobile ─────────────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .contact-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-xs);
+  }
+}

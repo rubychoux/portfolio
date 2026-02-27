@@ -1,0 +1,66 @@
+/* ─── Section ────────────────────────────────────────────────────────── */
+.skills {
+  border-top: 1px solid var(--color-border);
+}
+
+.skills-inner {
+  padding-top: var(--space-3xl);
+  padding-bottom: var(--space-3xl);
+}
+
+/* ─── Three-column grid ──────────────────────────────────────────────── */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2xl);
+}
+
+/* ─── Column header ──────────────────────────────────────────────────── */
+.skill-category {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-lg);
+}
+
+/* ─── Skill rows ─────────────────────────────────────────────────────── */
+.skill-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-item {
+  font-size: 0.925rem;
+  font-weight: 400;
+  color: var(--color-text);
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--color-border);
+  transition: color var(--transition), padding-left var(--transition);
+  cursor: default;
+}
+
+.skill-item:last-child {
+  border-bottom: none;
+}
+
+.skill-item:hover {
+  color: var(--color-accent);
+  padding-left: var(--space-xs);
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────────── */
+@media (max-width: 760px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
