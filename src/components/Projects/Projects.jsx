@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './Projects.css'
 
 const PROJECTS = [
@@ -9,6 +10,7 @@ const PROJECTS = [
     tags: ['React', 'TypeScript', 'Vite', 'Custom Hooks'],
     live: 'https://finflow-navy.vercel.app',
     github: 'https://github.com/rubychoux/finflow',
+    caseStudy: '/projects/finflow',
   },
   {
     id: 2,
@@ -39,7 +41,17 @@ export default function Projects() {
 
         <div className="projects-grid">
           {PROJECTS.map((project) => (
-            <article key={project.id} className="project-card">
+            <article
+              key={project.id}
+              className={`project-card${project.caseStudy ? ' project-card--linkable' : ''}`}
+            >
+              {project.caseStudy && (
+                <Link
+                  to={project.caseStudy}
+                  className="project-card-cover-link"
+                  aria-label={`View ${project.title} case study`}
+                />
+              )}
               <div className="project-card-top">
                 <h3 className="project-title">{project.title}</h3>
                 <p className="project-desc">{project.description}</p>

@@ -14,7 +14,7 @@ const CONTACT_LINKS = [
     external: true,
   },
   {
-    label: 'GitHub',git 
+    label: 'GitHub',
     display: 'github.com/rubychoux',
     href: 'https://github.com/rubychoux',
     external: true,

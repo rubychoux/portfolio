@@ -15,6 +15,30 @@
 .hero-inner {
   padding-top: var(--space-3xl);
   padding-bottom: var(--space-3xl);
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+/* ─── Text column ────────────────────────────────────────────────────── */
+.hero-text {
+  flex: 0 0 58%;
+}
+
+/* ─── Photo column ───────────────────────────────────────────────────── */
+.hero-photo-col {
+  flex: 0 0 42%;
+}
+
+.hero-photo {
+  width: 100%;
+  max-width: 380px;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 16px;
+  display: block;
+  margin-left: auto;
 }
 
 /* ─── Eyebrow ────────────────────────────────────────────────────────── */
@@ -100,6 +124,16 @@
 }
 
 /* ─── Mobile ─────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .hero-photo-col {
+    display: none;
+  }
+
+  .hero-text {
+    flex: 1;
+  }
+}
+
 @media (max-width: 640px) {
   .hero-inner {
     padding-top: var(--space-2xl);

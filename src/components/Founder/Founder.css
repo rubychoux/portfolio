@@ -1,0 +1,96 @@
+/* ─── Section ────────────────────────────────────────────────────────── */
+.founder {
+  border-top: 1px solid var(--color-border);
+}
+
+.founder-inner {
+  padding: 100px 24px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* ─── Header ─────────────────────────────────────────────────────────── */
+.founder-title {
+  font-size: clamp(1.4rem, 2.8vw, 1.9rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.3;
+  color: var(--color-text);
+  margin-bottom: var(--space-lg);
+}
+
+.founder-intro {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  max-width: 680px;
+  margin-bottom: var(--space-2xl);
+}
+
+/* ─── Photo grid ─────────────────────────────────────────────────────── */
+.founder-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: var(--space-2xl);
+}
+
+.founder-photo-figure {
+  display: flex;
+  flex-direction: column;
+}
+
+.founder-photo {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+}
+
+.founder-photo-figure figcaption {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-top: 10px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* ─── Milestone timeline ─────────────────────────────────────────────── */
+.founder-timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+
+.founder-milestone {
+  border-top: 1px solid var(--color-border);
+  padding-top: 20px;
+}
+
+.founder-milestone-year {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 8px;
+}
+
+.founder-milestone-desc {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.4;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .founder-photos {
+    grid-template-columns: 1fr;
+  }
+
+  .founder-timeline {
+    grid-template-columns: 1fr;
+  }
+}

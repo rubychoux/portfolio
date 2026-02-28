@@ -11,81 +11,66 @@
 /* ─── Two-column grid ────────────────────────────────────────────────── */
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 320px;
-  gap: var(--space-3xl);
+  grid-template-columns: 3fr 2fr;
+  gap: 60px;
   align-items: start;
 }
 
 /* ─── Bio column ─────────────────────────────────────────────────────── */
-.about-title {
-  font-size: clamp(1.4rem, 2.8vw, 1.9rem);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.3;
-  color: var(--color-text);
-  margin-bottom: var(--space-xl);
-}
-
 .about-bio p {
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   color: var(--color-text-muted);
-  line-height: 1.85;
-  margin-bottom: var(--space-lg);
+  line-height: 1.8;
+  margin-bottom: 16px;
 }
 
 .about-bio p:last-child {
   margin-bottom: 0;
 }
 
-/* ─── Currently card ─────────────────────────────────────────────────── */
-.currently-card {
-  background: var(--color-surface);
+/* ─── Sidebar cards ──────────────────────────────────────────────────── */
+.about-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.about-card {
   border: 1px solid var(--color-border);
-  border-radius: var(--radius);
-  padding: var(--space-xl);
+  border-radius: 10px;
+  padding: 24px;
 }
 
-.currently-label {
-  font-size: 0.68rem;
+.about-card-title {
+  font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.16em;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: var(--color-accent);
-  margin-bottom: var(--space-lg);
+  color: var(--color-text-muted);
+  margin-bottom: 12px;
 }
 
-.currently-list {
+.about-card-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: var(--space-md);
 }
 
-.currently-list li {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-  font-size: 0.875rem;
+.about-card-list li {
+  font-size: 0.9rem;
   color: var(--color-text-muted);
-  line-height: 1.5;
+  line-height: 1.8;
 }
 
-.currently-dot {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--color-accent);
-  flex-shrink: 0;
+.about-card-list li::before {
+  content: '— ';
+  color: var(--color-text-muted);
 }
 
 /* ─── Responsive ─────────────────────────────────────────────────────── */
-@media (max-width: 860px) {
+@media (max-width: 768px) {
   .about-grid {
     grid-template-columns: 1fr;
     gap: var(--space-2xl);
-  }
-
-  .currently-card {
-    max-width: 400px;
   }
 }

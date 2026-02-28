@@ -96,6 +96,25 @@
   color: var(--color-accent);
 }
 
+/* ─── Linkable card (stretched-link pattern) ─────────────────────────── */
+.project-card--linkable {
+  position: relative;
+  cursor: pointer;
+}
+
+.project-card-cover-link {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: var(--radius);
+}
+
+.project-card--linkable .project-tags,
+.project-card--linkable .project-links a {
+  position: relative;
+  z-index: 1;
+}
+
 /* ─── Responsive ─────────────────────────────────────────────────────── */
 @media (max-width: 900px) {
   .projects-grid {
