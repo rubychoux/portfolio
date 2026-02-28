@@ -26,16 +26,16 @@ export default function Hero() {
               offset={-70}
               className="btn btn-primary"
             >
-              See my work
+              View My Work
             </Link>
             <Link
-              to="contact"
+              to="founder"
               smooth={true}
               duration={500}
               offset={-70}
               className="btn btn-secondary"
             >
-              Get in touch
+              My Founder Story
             </Link>
           </div>
         </div>

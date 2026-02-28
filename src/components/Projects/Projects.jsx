@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom'
 import './Projects.css'
+import finflowThumb from '../../assets/finflow-dashboard.png'
+import auraThumb from '../../assets/aura-thumb.png'
+import interocciThumb from '../../assets/interocci-web.png'
 
 const PROJECTS = [
   {
@@ -11,6 +14,7 @@ const PROJECTS = [
     live: 'https://finflow-navy.vercel.app',
     github: 'https://github.com/rubychoux/finflow',
     caseStudy: '/projects/finflow',
+    thumbnail: finflowThumb,
   },
   {
     id: 2,
@@ -20,6 +24,8 @@ const PROJECTS = [
     tags: ['React', 'TypeScript', 'Tailwind', 'Context API'],
     live: 'https://aura-ruby.vercel.app',
     github: 'https://github.com/rubychoux/aura',
+    caseStudy: '/projects/aura',
+    thumbnail: auraThumb,
   },
   {
     id: 3,
@@ -29,6 +35,8 @@ const PROJECTS = [
     tags: ['React', 'Three.js', 'WebGL', 'React Three Fiber'],
     live: 'https://interocci.vercel.app',
     github: 'https://github.com/rubychoux/interocci',
+    caseStudy: '/projects/interocci',
+    thumbnail: interocciThumb,
   },
 ]
 
@@ -52,6 +60,9 @@ export default function Projects() {
                   aria-label={`View ${project.title} case study`}
                 />
               )}
+              <div className="project-thumb">
+                <img src={project.thumbnail} alt={project.title} />
+              </div>
               <div className="project-card-top">
                 <h3 className="project-title">{project.title}</h3>
                 <p className="project-desc">{project.description}</p>
@@ -81,6 +92,9 @@ export default function Projects() {
                     GitHub ↗
                   </a>
                 </div>
+                {project.caseStudy && (
+                  <span className="project-case-study-hint">View Case Study →</span>
+                )}
               </div>
             </article>
           ))}

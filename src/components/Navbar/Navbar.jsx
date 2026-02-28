@@ -3,10 +3,10 @@ import { Link } from 'react-scroll'
 import './Navbar.css'
 
 const NAV_LINKS = [
+  { to: 'projects',   label: 'Projects' },
   { to: 'about',      label: 'About' },
   { to: 'founder',    label: 'Founder' },
   { to: 'experience', label: 'Experience' },
-  { to: 'projects',   label: 'Projects' },
   { to: 'skills',     label: 'Skills' },
   { to: 'contact',    label: 'Contact' },
 ]

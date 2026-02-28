@@ -10,6 +10,8 @@ import Projects from './components/Projects/Projects'
 import Skills from './components/Skills/Skills'
 import Contact from './components/Contact/Contact'
 import FinFlowCaseStudy from './components/CaseStudy/FinFlowCaseStudy'
+import AURACaseStudy from './components/CaseStudy/AURACaseStudy'
+import InterOcciCaseStudy from './components/CaseStudy/InterOcciCaseStudy'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -31,10 +33,10 @@ function App() {
             <Navbar />
             <main>
               <Hero />
+              <Projects />
               <About />
               <Founder />
               <Experience />
-              <Projects />
               <Skills />
               <Contact />
             </main>
@@ -42,6 +44,8 @@ function App() {
         }
       />
       <Route path="/projects/finflow" element={<FinFlowCaseStudy />} />
+      <Route path="/projects/aura" element={<AURACaseStudy />} />
+      <Route path="/projects/interocci" element={<InterOcciCaseStudy />} />
     </Routes>
     </>
   )
