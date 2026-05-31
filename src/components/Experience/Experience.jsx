@@ -11,11 +11,11 @@ const EXPERIENCES = [
   },
   {
     id: 2,
-    org: 'AURA',
-    title: 'Founder & Frontend Engineer',
+    org: 'Caramel Lab',
+    title: 'Founder & Sole Engineer',
     period: '2025 — Present',
     description:
-      'After graduating, moved to Seoul to explore product-market fit in the AI x beauty space. Working as a beauty model since 2024 gave me firsthand exposure to the industry\'s gaps — fragmented advice, zero personalization, no data-driven tools. AURA is the platform I\'m building in response: an AI-powered personalization engine for the Korean beauty market.',
+      'Founder of Caramel Lab (caramellab.org), a live AI SaaS for Korean STEM and science students. Built the entire product solo in Next.js 16, React 19, and TypeScript on Supabase with row-level security, powered by Google Gemini — AI lab-report generation, paper analysis, a thesis-writing chatbot ("카라멜 조교"), AI feedback and grading, figure generation, and a community lounge. Integrated NicePay for payments and subscriptions. In production today with paying subscribers.',
   },
   {
     id: 3,

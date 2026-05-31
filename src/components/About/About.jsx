@@ -23,11 +23,11 @@ export default function About() {
               received a Presidential Undergraduate Research Award for the project.
             </p>
             <p>
-              I'm now a frontend engineer who builds with the same ownership mentality I had as a
-              founder. Since 2024, I've been working as a beauty model in Seoul — giving me
-              firsthand exposure to the Korean beauty industry from the inside. That experience is
-              what's driving my next venture: building the AI-powered beauty platform I wished
-              existed.
+              Today I'm a founder who builds AI products myself. I designed, shipped, and now
+              operate Caramel Lab — a live AI SaaS for STEM and science students in Korea. I wrote
+              the entire stack solo, from the Google Gemini pipelines that power its AI features to
+              the payment and subscription system behind them. I'm not a founder who hands the
+              building to someone else — I'm a founder who can build it.
             </p>
           </div>
 
@@ -35,8 +35,8 @@ export default function About() {
             <div className="about-card">
               <p className="about-card-title">Currently</p>
               <ul className="about-card-list">
-                <li>Open to Frontend Engineering roles</li>
-                <li>Exploring AI x beauty startup in Seoul</li>
+                <li>Founder, Caramel Lab — live AI SaaS</li>
+                <li>Building in AI for education & science</li>
                 <li>Based in Seoul, Korea</li>
               </ul>
             </div>
@@ -44,6 +44,7 @@ export default function About() {
             <div className="about-card">
               <p className="about-card-title">Highlights</p>
               <ul className="about-card-list">
+                <li>Caramel Lab — shipped AI product with paying users</li>
                 <li>$30K raised, InterOcci Inc. (2022)</li>
                 <li>Georgia Tech CREATE-X alumni</li>
                 <li>Presidential Research Award recipient</li>

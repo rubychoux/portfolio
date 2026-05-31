@@ -1,4 +1,6 @@
 import './Founder.css'
+import pitchPhoto from '../../assets/pitch.jpg'
+import demodayPhoto from '../../assets/demoday.jpg'
 
 const MILESTONES = [
   {
@@ -17,6 +19,14 @@ const MILESTONES = [
     year: '2023',
     desc: 'Pitched at Ygnite Conference, San Jose & Startup Exchange, Atlanta',
   },
+  {
+    year: '2025',
+    desc: 'Founded Caramel Lab — an AI SaaS for STEM students',
+  },
+  {
+    year: '2026',
+    desc: 'Shipped Caramel Lab to production with paying subscribers',
+  },
 ]
 
 export default function Founder() {
@@ -34,10 +44,17 @@ export default function Founder() {
           didn't have to live in separate worlds.
         </p>
 
+        <p className="founder-intro">
+          That first company taught me how to raise money, run user interviews, and pitch a vision.
+          Then I taught myself to build — and now I design, ship, and operate Caramel Lab entirely
+          on my own, from the AI pipelines to the payments. I went from a founder with an idea to a
+          founder who can build the whole thing.
+        </p>
+
         <div className="founder-photos">
           <figure className="founder-photo-figure">
             <img
-              src="/src/assets/pitch.jpg"
+              src={pitchPhoto}
               alt="Founder pitch at Ygnite Conference"
               className="founder-photo"
             />
@@ -45,7 +62,7 @@ export default function Founder() {
           </figure>
           <figure className="founder-photo-figure">
             <img
-              src="/src/assets/demoday.jpg"
+              src={demodayPhoto}
               alt="InterOcci Demo Day"
               className="founder-photo"
             />

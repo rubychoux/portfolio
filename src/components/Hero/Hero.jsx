@@ -10,32 +10,33 @@ export default function Hero() {
           <p className="hero-eyebrow">Ruby Choux Kim</p>
 
           <h1 className="hero-headline">
-            <span>Frontend Engineer.</span>
             <span>AI Founder.</span>
+            <span>Building Caramel Lab.</span>
           </h1>
 
           <p className="hero-subtext">
-            Georgia Tech CS grad. Frontend engineer and founder — building across fintech, AI, immersive tech, and beauty.
+            Georgia Tech CS grad building AI products end-to-end. Currently founder of Caramel Lab,
+            a live AI SaaS — previously raised $30K with InterOcci.
           </p>
 
           <div className="hero-ctas">
-            <Link
-              to="projects"
-              smooth={true}
-              duration={500}
-              offset={-70}
-              className="btn btn-primary"
-            >
-              View My Work
-            </Link>
             <Link
               to="founder"
               smooth={true}
               duration={500}
               offset={-70}
-              className="btn btn-secondary"
+              className="btn btn-primary"
             >
               My Founder Story
+            </Link>
+            <Link
+              to="projects"
+              smooth={true}
+              duration={500}
+              offset={-70}
+              className="btn btn-secondary"
+            >
+              What I'm Building
             </Link>
           </div>
         </div>

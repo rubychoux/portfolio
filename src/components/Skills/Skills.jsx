@@ -2,16 +2,16 @@ import './Skills.css'
 
 const SKILL_GROUPS = [
   {
-    category: 'Frontend',
-    skills: ['React', 'JavaScript', 'TypeScript', 'HTML', 'CSS', 'Vite'],
+    category: 'Product & Frontend',
+    skills: ['React', 'Next.js', 'TypeScript', 'JavaScript', 'Tailwind', 'Three.js'],
   },
   {
-    category: 'AI / ML',
-    skills: ['Python', 'Machine Learning', 'Data Analysis', 'TensorFlow'],
+    category: 'AI & Backend',
+    skills: ['Google Gemini', 'Supabase', 'Postgres', 'Python', 'Machine Learning', 'API Design'],
   },
   {
-    category: 'Tools',
-    skills: ['Git', 'VS Code', 'Vercel', 'Figma', 'Three.js'],
+    category: 'Founder Toolkit',
+    skills: ['Shipping solo', 'Payments & Billing', 'Vercel', 'Figma', 'Fundraising'],
   },
 ]
 
@@ -20,7 +20,7 @@ export default function Skills() {
     <section className="skills" id="skills">
       <div className="skills-inner container">
         <p className="section-label">Skills</p>
-        <h2 className="section-title">What I work with</h2>
+        <h2 className="section-title">How I build</h2>
 
         <div className="skills-grid">
           {SKILL_GROUPS.map(({ category, skills }) => (

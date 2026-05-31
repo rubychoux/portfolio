@@ -29,7 +29,7 @@ export default function Contact() {
 
         <h2 className="contact-headline">Let's build something.</h2>
         <p className="contact-subtext">
-          Open to Frontend Engineering roles and founder conversations.
+          Open to conversations with investors, collaborators, and fellow builders.
         </p>
 
         <ul className="contact-list">

@@ -9,8 +9,7 @@ import Experience from './components/Experience/Experience'
 import Projects from './components/Projects/Projects'
 import Skills from './components/Skills/Skills'
 import Contact from './components/Contact/Contact'
-import FinFlowCaseStudy from './components/CaseStudy/FinFlowCaseStudy'
-import AURACaseStudy from './components/CaseStudy/AURACaseStudy'
+import CaramelCaseStudy from './components/CaseStudy/CaramelCaseStudy'
 import InterOcciCaseStudy from './components/CaseStudy/InterOcciCaseStudy'
 
 function ScrollToTop() {
@@ -43,8 +42,7 @@ function App() {
           </>
         }
       />
-      <Route path="/projects/finflow" element={<FinFlowCaseStudy />} />
-      <Route path="/projects/aura" element={<AURACaseStudy />} />
+      <Route path="/projects/caramel" element={<CaramelCaseStudy />} />
       <Route path="/projects/interocci" element={<InterOcciCaseStudy />} />
     </Routes>
     </>

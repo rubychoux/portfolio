@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import './InterOcciCaseStudy.css'
+import interocciWeb from '../../assets/interocci-web.png'
 
 export default function InterOcciCaseStudy() {
   return (
@@ -62,15 +63,7 @@ export default function InterOcciCaseStudy() {
           <div className="cs-screenshots">
             <figure className="cs-screenshot-figure">
               <img
-                src="/src/assets/interocci-poster.png"
-                alt="InterOcci product overview"
-                className="screenshot-img"
-              />
-              <figcaption>Original product vision — Explore, Visit, Network</figcaption>
-            </figure>
-            <figure className="cs-screenshot-figure">
-              <img
-                src="/src/assets/interocci-web.png"
+                src={interocciWeb}
                 alt="InterOcci web platform"
                 className="screenshot-img"
               />
