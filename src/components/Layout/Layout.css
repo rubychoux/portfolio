@@ -5,6 +5,6 @@
   min-height: 100vh;
 }
 
-.page > section:not(.home-about) {
+.page > section:not(.about) {
   border-top: none;
 }

@@ -3,7 +3,6 @@ import { useEffect } from 'react'
 import './App.css'
 import Layout from './components/Layout/Layout'
 import Home from './components/Home/Home'
-import About from './components/About/About'
 import FounderPage from './components/Founder/FounderPage'
 import Experience from './components/Experience/Experience'
 import Writing from './components/Writing/Writing'
@@ -30,7 +29,6 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/founder" element={<FounderPage />} />
           <Route path="/projects" element={<Navigate to="/founder" replace />} />
-          <Route path="/about" element={<About />} />
           <Route path="/experience" element={<Experience />} />
           <Route path="/writing" element={<Writing />} />
         </Route>
