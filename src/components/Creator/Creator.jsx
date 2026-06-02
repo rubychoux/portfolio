@@ -54,7 +54,7 @@ const T = {
     igCta: 'Follow on Instagram (50K+)',
     tabs: { modeling: 'Modeling', traditional: 'Traditional Art', generative: 'Generative Art' },
     notes: {
-      modeling: 'More on Instagram.',
+      modeling: 'Some of my featured work.',
       traditional: 'Hand-made work, up to 2021.',
       generative: 'Exploring AI and generative techniques right now. New work in progress.',
     },
