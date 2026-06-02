@@ -127,7 +127,7 @@ export default function CaramelCaseStudy() {
     <div className="case-study">
       <header className="cs-header">
         <div className="cs-header-inner">
-          <Link to="/projects" className="cs-back-link">{t.back}</Link>
+          <Link to="/founder" className="cs-back-link">{t.back}</Link>
           <h1 className="cs-title">Caramel Lab</h1>
           <p className="cs-subtitle">{t.subtitle}</p>
           <div className="cs-header-actions">

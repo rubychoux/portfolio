@@ -8,15 +8,15 @@ const T = {
     headline: ['Entrepreneur.', 'Engineer.', 'Creator.'],
     subtext:
       'Georgia Tech CS grad and serial entrepreneur building AI products end to end. Caramel Lab is live with paying users, Meve is coming soon, and I share the journey with 50K+ on Instagram. Previously founded InterOcci, a VR art platform.',
-    storyBtn: 'My Founder Story',
-    buildBtn: "What I'm Building",
+    storyBtn: "My Work & Story",
+    contactBtn: 'Get in Touch',
   },
   ko: {
     headline: ['창업가.', '엔지니어.', '크리에이터.'],
     subtext:
       '조지아텍 CS 졸업, AI 제품을 처음부터 끝까지 직접 만드는 창업가입니다. 카라멜랩은 유료 사용자와 함께 운영 중이고, Meve도 곧 출시합니다. 그 여정을 인스타그램 5만+ 팔로워와 나누고 있어요. 이전에는 VR 아트 플랫폼 InterOcci를 창업했습니다.',
-    storyBtn: '창업 스토리',
-    buildBtn: '내가 만드는 것',
+    storyBtn: '작업과 창업 이야기',
+    contactBtn: '연락하기',
   },
 }
 
@@ -42,8 +42,8 @@ export default function Hero() {
             <Link to="/founder" className="btn btn-primary">
               {t.storyBtn}
             </Link>
-            <Link to="/projects" className="btn btn-secondary">
-              {t.buildBtn}
+            <Link to="/contact" className="btn btn-secondary">
+              {t.contactBtn}
             </Link>
           </div>
         </div>

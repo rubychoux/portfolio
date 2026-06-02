@@ -4,7 +4,6 @@ import './Navbar.css'
 import { useLang } from '../../i18n/LanguageContext'
 
 const NAV_LINKS = [
-  { to: '/projects',   label: { en: 'Projects',   ko: '프로젝트' } },
   { to: '/about',      label: { en: 'About',      ko: '소개' } },
   { to: '/founder',    label: { en: 'Founder',    ko: '창업 여정' } },
   { to: '/experience', label: { en: 'Experience', ko: '경력' } },

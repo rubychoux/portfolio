@@ -1,12 +1,11 @@
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import './App.css'
 import Layout from './components/Layout/Layout'
 import Home from './components/Home/Home'
 import About from './components/About/About'
-import Founder from './components/Founder/Founder'
+import FounderPage from './components/Founder/FounderPage'
 import Experience from './components/Experience/Experience'
-import Projects from './components/Projects/Projects'
 import Writing from './components/Writing/Writing'
 import Contact from './components/Contact/Contact'
 import CaramelCaseStudy from './components/CaseStudy/CaramelCaseStudy'
@@ -30,9 +29,9 @@ function App() {
         {/* Pages with the navbar */}
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
-          <Route path="/projects" element={<Projects />} />
+          <Route path="/founder" element={<FounderPage />} />
+          <Route path="/projects" element={<Navigate to="/founder" replace />} />
           <Route path="/about" element={<About />} />
-          <Route path="/founder" element={<Founder />} />
           <Route path="/experience" element={<Experience />} />
           <Route path="/writing" element={<Writing />} />
           <Route path="/contact" element={<Contact />} />
