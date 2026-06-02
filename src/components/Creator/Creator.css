@@ -1,0 +1,92 @@
+.creator-inner {
+  padding-top: var(--space-3xl);
+  padding-bottom: var(--space-3xl);
+}
+
+.creator-intro {
+  font-size: clamp(1rem, 2.2vw, 1.15rem);
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  max-width: 640px;
+  margin-top: var(--space-md);
+}
+
+/* ─── Instagram CTA ──────────────────────────────────────────────────── */
+.creator-ig {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55em;
+  margin-top: var(--space-xl);
+  padding: 0.7rem 1.4rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #fff;
+  background: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  transition: background var(--transition), transform var(--transition);
+}
+
+.creator-ig:hover {
+  background: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+  transform: translateY(-1px);
+}
+
+/* ─── Gallery ────────────────────────────────────────────────────────── */
+.creator-gallery-note {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin: var(--space-2xl) 0 var(--space-lg);
+}
+
+.creator-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.creator-tile {
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+.creator-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.creator-tile:hover img {
+  transform: scale(1.03);
+}
+
+.creator-tile--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    rgba(124, 106, 247, 0.18) 0%,
+    var(--color-surface-2) 70%
+  );
+}
+
+.creator-tile--placeholder span {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-subtle);
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .creator-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

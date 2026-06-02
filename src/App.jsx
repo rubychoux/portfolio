@@ -4,7 +4,8 @@ import './App.css'
 import Layout from './components/Layout/Layout'
 import Home from './components/Home/Home'
 import FounderPage from './components/Founder/FounderPage'
-import Experience from './components/Experience/Experience'
+import Engineer from './components/Engineer/Engineer'
+import Creator from './components/Creator/Creator'
 import Writing from './components/Writing/Writing'
 import CaramelCaseStudy from './components/CaseStudy/CaramelCaseStudy'
 import InterOcciCaseStudy from './components/CaseStudy/InterOcciCaseStudy'
@@ -29,7 +30,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/founder" element={<FounderPage />} />
           <Route path="/projects" element={<Navigate to="/founder" replace />} />
-          <Route path="/experience" element={<Experience />} />
+          <Route path="/engineer" element={<Engineer />} />
+          <Route path="/experience" element={<Navigate to="/engineer" replace />} />
+          <Route path="/creator" element={<Creator />} />
           <Route path="/writing" element={<Writing />} />
         </Route>
 

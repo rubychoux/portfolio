@@ -4,9 +4,10 @@ import './Navbar.css'
 import { useLang } from '../../i18n/LanguageContext'
 
 const NAV_LINKS = [
-  { to: '/founder',    label: { en: 'Founder',    ko: '창업 여정' } },
-  { to: '/experience', label: { en: 'Experience', ko: '경력' } },
-  { to: '/writing',    label: { en: 'Writing',    ko: '글' } },
+  { to: '/founder',  label: { en: 'Founder',  ko: '창업 여정' } },
+  { to: '/engineer', label: { en: 'Engineer', ko: '엔지니어' } },
+  { to: '/creator',  label: { en: 'Creator',  ko: '크리에이터' } },
+  { to: '/writing',  label: { en: 'Writing',  ko: '글' } },
 ]
 
 const SOCIAL_LINKS = [
