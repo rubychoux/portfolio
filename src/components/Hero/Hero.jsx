@@ -42,9 +42,9 @@ export default function Hero() {
             <Link to="/founder" className="btn btn-primary">
               {t.storyBtn}
             </Link>
-            <Link to="/contact" className="btn btn-secondary">
+            <a href="mailto:chouxxkim@gmail.com" className="btn btn-secondary">
               {t.contactBtn}
-            </Link>
+            </a>
           </div>
         </div>
 
