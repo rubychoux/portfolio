@@ -33,11 +33,47 @@
   transform: translateY(-1px);
 }
 
+/* ─── Tabs ───────────────────────────────────────────────────────────── */
+.creator-tabs {
+  display: flex;
+  gap: var(--space-lg);
+  margin: var(--space-2xl) 0 var(--space-xl);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.creator-tab {
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  padding: 0 0 var(--space-md);
+  position: relative;
+  transition: color var(--transition);
+}
+
+.creator-tab:hover,
+.creator-tab.active {
+  color: var(--color-text);
+}
+
+.creator-tab.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: var(--color-accent);
+}
+
 /* ─── Gallery ────────────────────────────────────────────────────────── */
 .creator-gallery-note {
   font-size: 0.8rem;
   color: var(--color-text-muted);
-  margin: var(--space-2xl) 0 var(--space-lg);
+  margin-top: var(--space-lg);
 }
 
 .creator-gallery {

@@ -1,12 +1,19 @@
+import { useState } from 'react'
 import './Creator.css'
 import { useLang } from '../../i18n/LanguageContext'
 
-// Drop modeling / art photos into src/assets/creator/ and they fill the gallery automatically.
-const photoModules = import.meta.glob('../../assets/creator/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}', {
-  eager: true,
-  import: 'default',
-})
-const PHOTOS = Object.values(photoModules)
+// Drop photos into these folders and they fill the matching tab automatically:
+//   src/assets/creator/modeling/   and   src/assets/creator/art/
+const modelingModules = import.meta.glob(
+  '../../assets/creator/modeling/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}',
+  { eager: true, import: 'default' }
+)
+const artModules = import.meta.glob(
+  '../../assets/creator/art/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}',
+  { eager: true, import: 'default' }
+)
+const MODELING = Object.values(modelingModules)
+const ART = Object.values(artModules)
 
 const T = {
   en: {
@@ -15,7 +22,8 @@ const T = {
     intro:
       "Outside the codebase, I'm a beauty model, an influencer, and an artist. I share the building, the founder life, and the creative work with a community of 50K+ on Instagram. It's the same instinct that drives my products: make something people feel.",
     igCta: 'Follow on Instagram (50K+)',
-    galleryNote: 'Selected modeling and art. More on Instagram.',
+    tabs: { modeling: 'Modeling', art: 'Artwork' },
+    note: 'More on Instagram.',
     placeholder: 'Photo coming soon',
   },
   ko: {
@@ -24,16 +32,41 @@ const T = {
     intro:
       '코드 밖에서 저는 뷰티 모델이자 인플루언서, 그리고 아티스트입니다. 만드는 과정과 창업가의 삶, 그리고 창작 작업을 인스타그램 5만+ 커뮤니티와 나눕니다. 제품을 만드는 것과 같은 본능이에요. 사람들이 느끼는 무언가를 만드는 것.',
     igCta: '인스타그램에서 팔로우 (5만+)',
-    galleryNote: '모델 활동과 미술 작업 일부. 더 많은 건 인스타그램에서.',
+    tabs: { modeling: '모델링', art: '작품' },
+    note: '더 많은 건 인스타그램에서.',
     placeholder: '사진 준비 중',
   },
 }
 
 const PLACEHOLDER_COUNT = 6
 
+function Gallery({ photos, placeholder }) {
+  return (
+    <div className="creator-gallery">
+      {photos.length
+        ? photos.map((src, i) => (
+            <div key={i} className="creator-tile">
+              <img src={src} alt="" loading="lazy" />
+            </div>
+          ))
+        : Array.from({ length: PLACEHOLDER_COUNT }).map((_, i) => (
+            <div key={i} className="creator-tile creator-tile--placeholder">
+              <span>{placeholder}</span>
+            </div>
+          ))}
+    </div>
+  )
+}
+
 export default function Creator() {
   const { lang } = useLang()
   const t = T[lang]
+  const [tab, setTab] = useState('modeling')
+
+  const TABS = [
+    { key: 'modeling', label: t.tabs.modeling },
+    { key: 'art', label: t.tabs.art },
+  ]
 
   return (
     <section className="creator" id="creator">
@@ -54,21 +87,24 @@ export default function Creator() {
           {t.igCta}
         </a>
 
-        <p className="creator-gallery-note">{t.galleryNote}</p>
-
-        <div className="creator-gallery">
-          {PHOTOS.length
-            ? PHOTOS.map((src, i) => (
-                <div key={i} className="creator-tile">
-                  <img src={src} alt="" loading="lazy" />
-                </div>
-              ))
-            : Array.from({ length: PLACEHOLDER_COUNT }).map((_, i) => (
-                <div key={i} className="creator-tile creator-tile--placeholder">
-                  <span>{t.placeholder}</span>
-                </div>
-              ))}
+        <div className="creator-tabs" role="tablist">
+          {TABS.map(({ key, label }) => (
+            <button
+              key={key}
+              role="tab"
+              aria-selected={tab === key}
+              className={`creator-tab${tab === key ? ' active' : ''}`}
+              onClick={() => setTab(key)}
+            >
+              {label}
+            </button>
+          ))}
         </div>
+
+        {tab === 'modeling' && <Gallery photos={MODELING} placeholder={t.placeholder} />}
+        {tab === 'art' && <Gallery photos={ART} placeholder={t.placeholder} />}
+
+        <p className="creator-gallery-note">{t.note}</p>
       </div>
     </section>
   )
