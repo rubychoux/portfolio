@@ -7,9 +7,12 @@ import About from './components/About/About'
 import Founder from './components/Founder/Founder'
 import Experience from './components/Experience/Experience'
 import Projects from './components/Projects/Projects'
+import Writing from './components/Writing/Writing'
 import Contact from './components/Contact/Contact'
 import CaramelCaseStudy from './components/CaseStudy/CaramelCaseStudy'
 import InterOcciCaseStudy from './components/CaseStudy/InterOcciCaseStudy'
+import WritingPost from './components/Writing/WritingPost'
+import QuotesPage from './components/Writing/QuotesPage'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -35,6 +38,7 @@ function App() {
               <About />
               <Founder />
               <Experience />
+              <Writing />
               <Contact />
             </main>
           </>
@@ -42,6 +46,8 @@ function App() {
       />
       <Route path="/projects/caramel" element={<CaramelCaseStudy />} />
       <Route path="/projects/interocci" element={<InterOcciCaseStudy />} />
+      <Route path="/writing/:slug" element={<WritingPost />} />
+      <Route path="/quotes" element={<QuotesPage />} />
     </Routes>
     </>
   )

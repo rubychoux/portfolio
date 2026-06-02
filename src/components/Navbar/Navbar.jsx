@@ -7,6 +7,7 @@ const NAV_LINKS = [
   { to: 'about',      label: 'About' },
   { to: 'founder',    label: 'Founder' },
   { to: 'experience', label: 'Experience' },
+  { to: 'writing',    label: 'Writing' },
   { to: 'contact',    label: 'Contact' },
 ]
 

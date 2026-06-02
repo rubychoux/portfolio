@@ -15,7 +15,7 @@ export default function About() {
               thinking. I didn't want to accept that as normal.
             </p>
             <p>
-              In 2022, I co-founded InterOcci — a VR art exhibition platform that let artists build
+              In 2022, I founded InterOcci — a VR art exhibition platform that let artists build
               immersive 3D galleries on Meta Quest. I incorporated as a Delaware C-Corp, conducted
               100+ customer discovery interviews across Asia, Europe, and North America, and raised
               $30K from Georgia Tech CREATE-X and angel investor Chris Klaus. I pitched at Demo Day,
