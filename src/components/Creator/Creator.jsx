@@ -3,17 +3,26 @@ import './Creator.css'
 import { useLang } from '../../i18n/LanguageContext'
 
 // Drop photos into these folders and they fill the matching tab automatically:
-//   src/assets/creator/modeling/   and   src/assets/creator/art/
+//   src/assets/creator/modeling/      (modeling shots)
+//   src/assets/creator/traditional/   (hand-made artwork, up to 2021)
+//   src/assets/creator/generative/    (AI / generative art, in progress)
 const modelingModules = import.meta.glob(
   '../../assets/creator/modeling/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}',
   { eager: true, import: 'default' }
 )
-const artModules = import.meta.glob(
-  '../../assets/creator/art/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}',
+const traditionalModules = import.meta.glob(
+  '../../assets/creator/traditional/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}',
   { eager: true, import: 'default' }
 )
-const MODELING = Object.values(modelingModules)
-const ART = Object.values(artModules)
+const generativeModules = import.meta.glob(
+  '../../assets/creator/generative/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}',
+  { eager: true, import: 'default' }
+)
+const PHOTOS = {
+  modeling: Object.values(modelingModules),
+  traditional: Object.values(traditionalModules),
+  generative: Object.values(generativeModules),
+}
 
 const T = {
   en: {
@@ -22,8 +31,12 @@ const T = {
     intro:
       "Outside the codebase, I'm a beauty model, an influencer, and an artist. I share the building, the founder life, and the creative work with a community of 50K+ on Instagram. It's the same instinct that drives my products: make something people feel.",
     igCta: 'Follow on Instagram (50K+)',
-    tabs: { modeling: 'Modeling', art: 'Artwork' },
-    note: 'More on Instagram.',
+    tabs: { modeling: 'Modeling', traditional: 'Traditional Art', generative: 'Generative Art' },
+    notes: {
+      modeling: 'More on Instagram.',
+      traditional: 'Hand-made work, up to 2021.',
+      generative: "Exploring AI and generative techniques right now. New work in progress.",
+    },
     placeholder: 'Photo coming soon',
   },
   ko: {
@@ -32,8 +45,12 @@ const T = {
     intro:
       '코드 밖에서 저는 뷰티 모델이자 인플루언서, 그리고 아티스트입니다. 만드는 과정과 창업가의 삶, 그리고 창작 작업을 인스타그램 5만+ 커뮤니티와 나눕니다. 제품을 만드는 것과 같은 본능이에요. 사람들이 느끼는 무언가를 만드는 것.',
     igCta: '인스타그램에서 팔로우 (5만+)',
-    tabs: { modeling: '모델링', art: '작품' },
-    note: '더 많은 건 인스타그램에서.',
+    tabs: { modeling: '모델링', traditional: '전통 미술', generative: '제너러티브 아트' },
+    notes: {
+      modeling: '더 많은 건 인스타그램에서.',
+      traditional: '직접 그린 작업, 2021년까지.',
+      generative: '지금은 AI와 제너러티브 기법을 공부하며 새 작업을 준비 중이에요.',
+    },
     placeholder: '사진 준비 중',
   },
 }
@@ -65,7 +82,8 @@ export default function Creator() {
 
   const TABS = [
     { key: 'modeling', label: t.tabs.modeling },
-    { key: 'art', label: t.tabs.art },
+    { key: 'traditional', label: t.tabs.traditional },
+    { key: 'generative', label: t.tabs.generative },
   ]
 
   return (
@@ -101,10 +119,8 @@ export default function Creator() {
           ))}
         </div>
 
-        {tab === 'modeling' && <Gallery photos={MODELING} placeholder={t.placeholder} />}
-        {tab === 'art' && <Gallery photos={ART} placeholder={t.placeholder} />}
-
-        <p className="creator-gallery-note">{t.note}</p>
+        <p className="creator-gallery-note">{t.notes[tab]}</p>
+        <Gallery photos={PHOTOS[tab]} placeholder={t.placeholder} />
       </div>
     </section>
   )
