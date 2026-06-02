@@ -1,27 +1,48 @@
 import { useState } from 'react'
 import './Creator.css'
+import Lightbox from './Lightbox'
 import { useLang } from '../../i18n/LanguageContext'
 
-// Drop photos into these folders and they fill the matching tab automatically:
-//   src/assets/creator/modeling/      (modeling shots)
-//   src/assets/creator/traditional/   (hand-made artwork, up to 2021)
-//   src/assets/creator/generative/    (AI / generative art, in progress)
+// Photos auto-fill per tab. A SUBFOLDER = one shoot: its photos group together and
+// open as a gallery in the lightbox. A photo placed directly in the tab folder is its
+// own single-image shoot.
+//   src/assets/creator/modeling/<shoot>/01.jpg, 02.jpg ...
+//   src/assets/creator/traditional/<set>/...
+//   src/assets/creator/generative/<set>/...
 const modelingModules = import.meta.glob(
-  '../../assets/creator/modeling/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}',
+  '../../assets/creator/modeling/**/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}',
   { eager: true, import: 'default' }
 )
 const traditionalModules = import.meta.glob(
-  '../../assets/creator/traditional/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}',
+  '../../assets/creator/traditional/**/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}',
   { eager: true, import: 'default' }
 )
 const generativeModules = import.meta.glob(
-  '../../assets/creator/generative/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}',
+  '../../assets/creator/generative/**/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}',
   { eager: true, import: 'default' }
 )
-const PHOTOS = {
-  modeling: Object.values(modelingModules),
-  traditional: Object.values(traditionalModules),
-  generative: Object.values(generativeModules),
+
+// Group photos by their immediate subfolder (the "shoot"). Photos sitting directly in
+// the tab folder each become a one-image shoot.
+function groupShoots(modules, category) {
+  const groups = new Map()
+  const marker = `/creator/${category}/`
+  Object.entries(modules)
+    .sort(([a], [b]) => a.localeCompare(b))
+    .forEach(([path, src]) => {
+      const rel = path.split(marker)[1] || path
+      const parts = rel.split('/')
+      const key = parts.length > 1 ? parts[0] : rel
+      if (!groups.has(key)) groups.set(key, [])
+      groups.get(key).push(src)
+    })
+  return Array.from(groups, ([id, images]) => ({ id, images }))
+}
+
+const SHOOTS = {
+  modeling: groupShoots(modelingModules, 'modeling'),
+  traditional: groupShoots(traditionalModules, 'traditional'),
+  generative: groupShoots(generativeModules, 'generative'),
 }
 
 const T = {
@@ -35,7 +56,7 @@ const T = {
     notes: {
       modeling: 'More on Instagram.',
       traditional: 'Hand-made work, up to 2021.',
-      generative: "Exploring AI and generative techniques right now. New work in progress.",
+      generative: 'Exploring AI and generative techniques right now. New work in progress.',
     },
     placeholder: 'Photo coming soon',
   },
@@ -57,20 +78,38 @@ const T = {
 
 const PLACEHOLDER_COUNT = 6
 
-function Gallery({ photos, placeholder }) {
+function Gallery({ shoots, placeholder, onOpen }) {
+  if (!shoots.length) {
+    return (
+      <div className="creator-gallery">
+        {Array.from({ length: PLACEHOLDER_COUNT }).map((_, i) => (
+          <div key={i} className="creator-tile creator-tile--placeholder">
+            <span>{placeholder}</span>
+          </div>
+        ))}
+      </div>
+    )
+  }
   return (
     <div className="creator-gallery">
-      {photos.length
-        ? photos.map((src, i) => (
-            <div key={i} className="creator-tile">
-              <img src={src} alt="" loading="lazy" />
-            </div>
-          ))
-        : Array.from({ length: PLACEHOLDER_COUNT }).map((_, i) => (
-            <div key={i} className="creator-tile creator-tile--placeholder">
-              <span>{placeholder}</span>
-            </div>
-          ))}
+      {shoots.map((shoot) => (
+        <button
+          key={shoot.id}
+          className="creator-tile"
+          onClick={() => onOpen(shoot.images)}
+          aria-label={`Open shoot (${shoot.images.length} photos)`}
+        >
+          <img src={shoot.images[0]} alt="" loading="lazy" />
+          {shoot.images.length > 1 && (
+            <span className="creator-tile-count" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                <path d="M3 5h13v2H3V5zm0 4h13v2H3V9zm0 4h9v2H3v-2zM18 5h3v14a2 2 0 0 1-2 2H7v-2h12V5h-1z" />
+              </svg>
+              {shoot.images.length}
+            </span>
+          )}
+        </button>
+      ))}
     </div>
   )
 }
@@ -79,6 +118,7 @@ export default function Creator() {
   const { lang } = useLang()
   const t = T[lang]
   const [tab, setTab] = useState('modeling')
+  const [lightbox, setLightbox] = useState(null)
 
   const TABS = [
     { key: 'modeling', label: t.tabs.modeling },
@@ -120,8 +160,10 @@ export default function Creator() {
         </div>
 
         <p className="creator-gallery-note">{t.notes[tab]}</p>
-        <Gallery photos={PHOTOS[tab]} placeholder={t.placeholder} />
+        <Gallery shoots={SHOOTS[tab]} placeholder={t.placeholder} onOpen={setLightbox} />
       </div>
+
+      {lightbox && <Lightbox images={lightbox} onClose={() => setLightbox(null)} />}
     </section>
   )
 }
