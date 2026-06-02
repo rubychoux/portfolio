@@ -7,7 +7,7 @@ const T = {
     back: '← Back',
     subtitle: 'An AI SaaS for STEM & Science Students',
     visit: 'Visit caramellab.org ↗',
-    stats: ['Live in Production', 'Paying Subscribers', 'Co-founder/CTO', 'AI SaaS'],
+    stats: ['Live in Production', '10K Users in 2 Months', 'Paying Subscribers', 'Co-founder/CTO', 'AI SaaS'],
     problemHeading: 'The Problem',
     problem:
       "Korean STEM and science students are buried in lab reports, papers, and theses, with almost no tooling built for how they actually work. General-purpose AI tools don't understand experimental write-ups, scientific figures, or the structure of an academic paper, and they aren't built for the Korean academic context. I built Caramel Lab to be the AI workspace I wished existed for science students: one place to generate lab reports, analyze papers, write theses, and get AI feedback on their work.",
@@ -45,20 +45,20 @@ const T = {
       },
       {
         h: 'Shipped & Running',
-        p: ['Caramel Lab is live in production at ', ' today, serving real students with paying subscribers. Not a prototype, an operating product.'],
+        p: ['Caramel Lab is live in production at ', ' today, serving real students. It reached 10,000 users within two months of launch. Not a prototype, an operating product.'],
         code: ['caramellab.org'],
       },
     ],
     whyHeading: 'Why It Matters',
     why:
-      "Caramel Lab is proof of how I work as a founder: I don't just have ideas, I build and run them. I took it from an empty repo to a live AI product with paying subscribers alone, designing the experience, writing the full stack, wiring up the Gemini pipelines, and shipping a real payment system. It's the foundation for everything I want to build next in AI for education and science.",
+      "Caramel Lab is proof of how I work as a founder: I don't just have ideas, I build and run them. As its co-founder and CTO, I took it from an empty repo to a live AI product that reached 10,000 users within two months, designing the experience, writing the full stack, wiring up the Gemini pipelines, and shipping a real payment system. It's the foundation for everything I want to build next in AI for education and science.",
     footer: '← Back to portfolio',
   },
   ko: {
     back: '← 뒤로',
     subtitle: 'STEM·과학 학생을 위한 AI SaaS',
     visit: 'caramellab.org 방문 ↗',
-    stats: ['프로덕션 운영 중', '유료 구독자', '공동창업자/CTO', 'AI SaaS'],
+    stats: ['프로덕션 운영 중', '2개월 만에 1만 유저', '유료 구독자', '공동창업자/CTO', 'AI SaaS'],
     problemHeading: '문제',
     problem:
       '한국의 STEM·과학 학생들은 실험 리포트, 논문, 학위논문에 파묻혀 있지만, 그들이 실제로 일하는 방식에 맞춰 만들어진 도구는 거의 없습니다. 범용 AI 도구는 실험 보고서나 과학 그림, 학술 논문의 구조를 이해하지 못하고, 한국의 학술 맥락에 맞게 만들어지지도 않았습니다. 저는 과학 학생을 위해 있었으면 했던 AI 작업 공간으로 카라멜랩을 만들었습니다. 실험 리포트를 생성하고, 논문을 분석하고, 학위논문을 쓰고, 자기 작업에 대한 AI 피드백을 받는 것을 한곳에서 할 수 있게요.',
@@ -96,13 +96,13 @@ const T = {
       },
       {
         h: '출시 & 운영 중',
-        p: ['카라멜랩은 오늘도 ', '에서 프로덕션으로 운영되며 실제 학생과 유료 구독자에게 서비스합니다. 프로토타입이 아니라 운영되는 제품입니다.'],
+        p: ['카라멜랩은 오늘도 ', '에서 프로덕션으로 운영되며 실제 학생에게 서비스합니다. 런칭 두 달 만에 유저 1만 명을 달성했어요. 프로토타입이 아니라 운영되는 제품입니다.'],
         code: ['caramellab.org'],
       },
     ],
     whyHeading: '왜 중요한가',
     why:
-      '카라멜랩은 제가 창업가로서 일하는 방식의 증거입니다. 아이디어만 있는 게 아니라 직접 만들고 운영합니다. 빈 저장소에서 유료 구독자를 가진 라이브 AI 제품까지 혼자 끌고 왔습니다. 경험을 설계하고, 전체 스택을 작성하고, Gemini 파이프라인을 연결하고, 실제 결제 시스템을 출시했습니다. 교육과 과학을 위한 AI 분야에서 다음에 만들고 싶은 모든 것의 토대입니다.',
+      '카라멜랩은 제가 창업가로서 일하는 방식의 증거입니다. 아이디어만 있는 게 아니라 직접 만들고 운영합니다. 공동창업자이자 CTO로서 빈 저장소에서 런칭 두 달 만에 유저 1만 명을 달성한 라이브 AI 제품까지 직접 끌고 왔습니다. 경험을 설계하고, 전체 스택을 작성하고, Gemini 파이프라인을 연결하고, 실제 결제 시스템을 출시했습니다. 교육과 과학을 위한 AI 분야에서 다음에 만들고 싶은 모든 것의 토대입니다.',
     footer: '← 포트폴리오로 돌아가기',
   },
 }

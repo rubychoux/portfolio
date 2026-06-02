@@ -15,10 +15,10 @@ const T = {
       },
       {
         org: 'Caramel Lab',
-        title: 'Founder & Sole Engineer',
+        title: 'Co-founder & CTO',
         period: '2026 – Present',
         description:
-          'Founder of Caramel Lab (caramellab.org), a live AI SaaS for Korean STEM and science students. Built the entire product solo in Next.js 16, React 19, and TypeScript on Supabase with row-level security, powered by Google Gemini: AI lab-report generation, paper analysis, a thesis-writing chatbot ("카라멜 조교"), AI feedback and grading, figure generation, and a community lounge. Integrated NicePay for payments and subscriptions. In production today with paying subscribers.',
+          'Co-founder and CTO of Caramel Lab (caramellab.org), a live AI SaaS for Korean STEM and science students. Built the entire product solo in Next.js 16, React 19, and TypeScript on Supabase with row-level security, powered by Google Gemini: AI lab-report generation, paper analysis, a thesis-writing chatbot ("카라멜 조교"), AI feedback and grading, figure generation, and a community lounge. Integrated NicePay for payments and subscriptions. Launched and reached 10,000 users within two months, now in production with paying subscribers.',
       },
       {
         org: 'Georgia Tech',
@@ -56,10 +56,10 @@ const T = {
       },
       {
         org: 'Caramel Lab',
-        title: '창업자 & 단독 엔지니어',
+        title: '공동창업자 & CTO',
         period: '2026년 – 현재',
         description:
-          '한국 STEM·과학 학생을 위한 라이브 AI SaaS인 카라멜랩(caramellab.org)의 창업자입니다. Next.js 16, React 19, TypeScript와 row-level security를 적용한 Supabase 위에서 Google Gemini로 구동되는 전체 제품을 혼자 만들었습니다. AI 실험 리포트 생성, 논문 분석, 논문 작성 챗봇("카라멜 조교"), AI 피드백·채점, 그림 생성, 커뮤니티 라운지를 구현했고, NicePay로 결제·구독을 연동했습니다. 현재 유료 구독자와 함께 프로덕션에서 운영 중입니다.',
+          '한국 STEM·과학 학생을 위한 라이브 AI SaaS인 카라멜랩(caramellab.org)의 공동창업자이자 CTO입니다. Next.js 16, React 19, TypeScript와 row-level security를 적용한 Supabase 위에서 Google Gemini로 구동되는 전체 제품을 혼자 만들었습니다. AI 실험 리포트 생성, 논문 분석, 논문 작성 챗봇("카라멜 조교"), AI 피드백·채점, 그림 생성, 커뮤니티 라운지를 구현했고, NicePay로 결제·구독을 연동했습니다. 런칭 두 달 만에 유저 1만 명을 달성했고, 현재 유료 구독자와 함께 프로덕션에서 운영 중입니다.',
       },
       {
         org: 'Georgia Tech',

@@ -9,8 +9,8 @@ const PROJECTS = [
     id: 1,
     title: 'Caramel Lab',
     description: {
-      en: 'A live AI SaaS for Korean STEM and science students: AI lab-report generation, paper analysis, a thesis-writing chatbot ("카라멜 조교"), AI feedback and grading, figure generation, and a community lounge. Built solo full-stack on Supabase with row-level security and Google Gemini, with NicePay payments and real paying subscribers.',
-      ko: '한국 STEM·과학 학생을 위한 라이브 AI SaaS입니다. AI 실험 리포트 생성, 논문 분석, 논문 작성 챗봇("카라멜 조교"), AI 피드백·채점, 그림 생성, 커뮤니티 라운지를 제공합니다. row-level security를 적용한 Supabase와 Google Gemini 위에서 풀스택을 혼자 만들었고, NicePay 결제와 실제 유료 구독자를 갖추고 있습니다.',
+      en: 'A live AI SaaS for Korean STEM and science students: AI lab-report generation, paper analysis, a thesis-writing chatbot ("카라멜 조교"), AI feedback and grading, figure generation, and a community lounge. Built solo full-stack as co-founder and CTO on Supabase with row-level security and Google Gemini, with NicePay payments and real paying subscribers. Reached 10,000 users within two months of launch.',
+      ko: '한국 STEM·과학 학생을 위한 라이브 AI SaaS입니다. AI 실험 리포트 생성, 논문 분석, 논문 작성 챗봇("카라멜 조교"), AI 피드백·채점, 그림 생성, 커뮤니티 라운지를 제공합니다. 공동창업자이자 CTO로서 row-level security를 적용한 Supabase와 Google Gemini 위에서 풀스택을 혼자 만들었고, NicePay 결제와 실제 유료 구독자를 갖추고 있습니다. 런칭 두 달 만에 유저 1만 명을 달성했습니다.',
     },
     tags: ['Next.js 16', 'React 19', 'TypeScript', 'Supabase', 'Gemini'],
     live: 'https://caramellab.org',
