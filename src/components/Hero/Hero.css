@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   padding-top: var(--navbar-h);
-  /* Subtle radial gradient — very faint accent bloom at top */
+  /* Subtle radial gradient, very faint accent bloom at top */
   background: radial-gradient(
     ellipse 90% 55% at 20% -5%,
     rgba(124, 106, 247, 0.07) 0%,

@@ -1,6 +1,6 @@
 import fm from 'front-matter'
 
-// Drop a .md file into ./blog or ./books and it shows up automatically — no code change.
+// Drop a .md file into ./blog or ./books and it shows up automatically, no code change.
 const blogFiles = import.meta.glob('./blog/*.md', { eager: true, query: '?raw', import: 'default' })
 const bookFiles = import.meta.glob('./books/*.md', { eager: true, query: '?raw', import: 'default' })
 

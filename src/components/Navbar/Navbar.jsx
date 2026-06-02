@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-scroll'
 import './Navbar.css'
+import { useLang } from '../../i18n/LanguageContext'
 
 const NAV_LINKS = [
-  { to: 'projects',   label: 'Projects' },
-  { to: 'about',      label: 'About' },
-  { to: 'founder',    label: 'Founder' },
-  { to: 'experience', label: 'Experience' },
-  { to: 'writing',    label: 'Writing' },
-  { to: 'contact',    label: 'Contact' },
+  { to: 'projects',   label: { en: 'Projects',   ko: '프로젝트' } },
+  { to: 'about',      label: { en: 'About',      ko: '소개' } },
+  { to: 'founder',    label: { en: 'Founder',    ko: '창업 여정' } },
+  { to: 'experience', label: { en: 'Experience', ko: '경력' } },
+  { to: 'writing',    label: { en: 'Writing',    ko: '글' } },
+  { to: 'contact',    label: { en: 'Contact',    ko: '연락' } },
 ]
 
 const SOCIAL_LINKS = [
@@ -38,6 +39,7 @@ const SOCIAL_LINKS = [
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const { lang, toggle } = useLang()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30)
@@ -87,34 +89,46 @@ export default function Navbar() {
           </ul>
         </div>
 
-        <ul className={`navbar-links${menuOpen ? ' open' : ''}`}>
-          {NAV_LINKS.map(({ to, label }) => (
-            <li key={to}>
-              <Link
-                to={to}
-                smooth={true}
-                duration={500}
-                offset={-70}
-                spy={true}
-                activeClass="active"
-                onClick={() => setMenuOpen(false)}
-              >
-                {label}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <div className="navbar-right">
+          <ul className={`navbar-links${menuOpen ? ' open' : ''}`}>
+            {NAV_LINKS.map(({ to, label }) => (
+              <li key={to}>
+                <Link
+                  to={to}
+                  smooth={true}
+                  duration={500}
+                  offset={-70}
+                  spy={true}
+                  activeClass="active"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {label[lang]}
+                </Link>
+              </li>
+            ))}
+          </ul>
 
-        <button
-          className={`hamburger${menuOpen ? ' open' : ''}`}
-          onClick={() => setMenuOpen(prev => !prev)}
-          aria-label="Toggle navigation menu"
-          aria-expanded={menuOpen}
-        >
-          <span className="bar" />
-          <span className="bar" />
-          <span className="bar" />
-        </button>
+          <button
+            className="lang-toggle"
+            onClick={toggle}
+            aria-label={lang === 'en' ? 'Switch to Korean' : 'Switch to English'}
+          >
+            <span className={lang === 'en' ? 'on' : ''}>EN</span>
+            <span className="lang-sep">/</span>
+            <span className={lang === 'ko' ? 'on' : ''}>KO</span>
+          </button>
+
+          <button
+            className={`hamburger${menuOpen ? ' open' : ''}`}
+            onClick={() => setMenuOpen(prev => !prev)}
+            aria-label="Toggle navigation menu"
+            aria-expanded={menuOpen}
+          >
+            <span className="bar" />
+            <span className="bar" />
+            <span className="bar" />
+          </button>
+        </div>
       </div>
     </nav>
   )

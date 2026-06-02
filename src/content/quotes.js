@@ -1,4 +1,4 @@
-// Add a quote: { text, author, source } — source is optional.
+// Add a quote: { text, author, source }. Source is optional.
 export const QUOTES = [
   {
     text: 'The people who are crazy enough to think they can change the world are the ones who do.',

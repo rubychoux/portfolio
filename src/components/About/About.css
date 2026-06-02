@@ -63,8 +63,8 @@
 }
 
 .about-card-list li::before {
-  content: '— ';
-  color: var(--color-text-muted);
+  content: '· ';
+  color: var(--color-text-subtle);
 }
 
 /* ─── Responsive ─────────────────────────────────────────────────────── */
