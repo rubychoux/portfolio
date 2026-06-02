@@ -1,8 +1,8 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import './App.css'
-import Navbar from './components/Navbar/Navbar'
-import Hero from './components/Hero/Hero'
+import Layout from './components/Layout/Layout'
+import Home from './components/Home/Home'
 import About from './components/About/About'
 import Founder from './components/Founder/Founder'
 import Experience from './components/Experience/Experience'
@@ -27,28 +27,23 @@ function App() {
     <>
       <ScrollToTop />
       <Routes>
-      <Route
-        path="/"
-        element={
-          <>
-            <Navbar />
-            <main>
-              <Hero />
-              <Projects />
-              <About />
-              <Founder />
-              <Experience />
-              <Writing />
-              <Contact />
-            </main>
-          </>
-        }
-      />
-      <Route path="/projects/caramel" element={<CaramelCaseStudy />} />
-      <Route path="/projects/interocci" element={<InterOcciCaseStudy />} />
-      <Route path="/writing/:slug" element={<WritingPost />} />
-      <Route path="/quotes" element={<QuotesPage />} />
-    </Routes>
+        {/* Pages with the navbar */}
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/founder" element={<Founder />} />
+          <Route path="/experience" element={<Experience />} />
+          <Route path="/writing" element={<Writing />} />
+          <Route path="/contact" element={<Contact />} />
+        </Route>
+
+        {/* Full-page detail views (own back navigation) */}
+        <Route path="/projects/caramel" element={<CaramelCaseStudy />} />
+        <Route path="/projects/interocci" element={<InterOcciCaseStudy />} />
+        <Route path="/writing/:slug" element={<WritingPost />} />
+        <Route path="/quotes" element={<QuotesPage />} />
+      </Routes>
     </>
   )
 }

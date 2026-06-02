@@ -1,4 +1,4 @@
-import { Link } from 'react-scroll'
+import { Link } from 'react-router-dom'
 import './Hero.css'
 import profilePhoto from '../../assets/profile.jpg'
 import { useLang } from '../../i18n/LanguageContext'
@@ -39,22 +39,10 @@ export default function Hero() {
           <p className="hero-subtext">{t.subtext}</p>
 
           <div className="hero-ctas">
-            <Link
-              to="founder"
-              smooth={true}
-              duration={500}
-              offset={-70}
-              className="btn btn-primary"
-            >
+            <Link to="/founder" className="btn btn-primary">
               {t.storyBtn}
             </Link>
-            <Link
-              to="projects"
-              smooth={true}
-              duration={500}
-              offset={-70}
-              className="btn btn-secondary"
-            >
+            <Link to="/projects" className="btn btn-secondary">
               {t.buildBtn}
             </Link>
           </div>

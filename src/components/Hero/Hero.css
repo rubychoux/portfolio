@@ -1,9 +1,8 @@
 /* ─── Section ────────────────────────────────────────────────────────── */
 .hero {
-  min-height: 100vh;
+  min-height: calc(100vh - var(--navbar-h));
   display: flex;
   align-items: center;
-  padding-top: var(--navbar-h);
   /* Subtle radial gradient, very faint accent bloom at top */
   background: radial-gradient(
     ellipse 90% 55% at 20% -5%,

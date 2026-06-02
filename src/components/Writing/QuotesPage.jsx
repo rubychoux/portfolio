@@ -17,7 +17,7 @@ export default function QuotesPage() {
     <div className="case-study">
       <header className="cs-header">
         <div className="cs-header-inner">
-          <Link to="/#writing" className="cs-back-link">{ui.back}</Link>
+          <Link to="/writing" className="cs-back-link">{ui.back}</Link>
           <h1 className="cs-title">{ui.title}</h1>
           <p className="cs-subtitle">{ui.subtitle}</p>
         </div>
@@ -37,7 +37,7 @@ export default function QuotesPage() {
         </div>
 
         <footer className="cs-footer">
-          <Link to="/#writing" className="cs-back-link">{ui.back}</Link>
+          <Link to="/writing" className="cs-back-link">{ui.back}</Link>
         </footer>
       </div>
     </div>

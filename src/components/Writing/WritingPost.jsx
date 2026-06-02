@@ -33,7 +33,7 @@ export default function WritingPost() {
           <h1 className="cs-title">{ui.notFound}</h1>
           <p className="cs-prose">{ui.notFoundDesc}</p>
           <footer className="cs-footer">
-            <Link to="/#writing" className="cs-back-link">{ui.back}</Link>
+            <Link to="/writing" className="cs-back-link">{ui.back}</Link>
           </footer>
         </div>
       </div>
@@ -49,7 +49,7 @@ export default function WritingPost() {
     <div className="case-study">
       <header className="cs-header">
         <div className="cs-header-inner">
-          <Link to="/#writing" className="cs-back-link">{ui.back}</Link>
+          <Link to="/writing" className="cs-back-link">{ui.back}</Link>
           <h1 className="cs-title">{post.title}</h1>
           <p className="cs-subtitle">{subtitleParts.filter(Boolean).join(' · ')}</p>
         </div>
@@ -61,7 +61,7 @@ export default function WritingPost() {
         </div>
 
         <footer className="cs-footer">
-          <Link to="/#writing" className="cs-back-link">{ui.back}</Link>
+          <Link to="/writing" className="cs-back-link">{ui.back}</Link>
         </footer>
       </div>
     </div>

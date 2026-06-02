@@ -1,15 +1,15 @@
 import { useState, useEffect } from 'react'
-import { Link } from 'react-scroll'
+import { Link, NavLink } from 'react-router-dom'
 import './Navbar.css'
 import { useLang } from '../../i18n/LanguageContext'
 
 const NAV_LINKS = [
-  { to: 'projects',   label: { en: 'Projects',   ko: '프로젝트' } },
-  { to: 'about',      label: { en: 'About',      ko: '소개' } },
-  { to: 'founder',    label: { en: 'Founder',    ko: '창업 여정' } },
-  { to: 'experience', label: { en: 'Experience', ko: '경력' } },
-  { to: 'writing',    label: { en: 'Writing',    ko: '글' } },
-  { to: 'contact',    label: { en: 'Contact',    ko: '연락' } },
+  { to: '/projects',   label: { en: 'Projects',   ko: '프로젝트' } },
+  { to: '/about',      label: { en: 'About',      ko: '소개' } },
+  { to: '/founder',    label: { en: 'Founder',    ko: '창업 여정' } },
+  { to: '/experience', label: { en: 'Experience', ko: '경력' } },
+  { to: '/writing',    label: { en: 'Writing',    ko: '글' } },
+  { to: '/contact',    label: { en: 'Contact',    ko: '연락' } },
 ]
 
 const SOCIAL_LINKS = [
@@ -61,9 +61,7 @@ export default function Navbar() {
       <div className="navbar-inner">
         <div className="navbar-left">
           <Link
-            to="hero"
-            smooth={true}
-            duration={500}
+            to="/"
             className="navbar-logo"
             onClick={() => setMenuOpen(false)}
           >
@@ -93,17 +91,13 @@ export default function Navbar() {
           <ul className={`navbar-links${menuOpen ? ' open' : ''}`}>
             {NAV_LINKS.map(({ to, label }) => (
               <li key={to}>
-                <Link
+                <NavLink
                   to={to}
-                  smooth={true}
-                  duration={500}
-                  offset={-70}
-                  spy={true}
-                  activeClass="active"
+                  className={({ isActive }) => (isActive ? 'active' : undefined)}
                   onClick={() => setMenuOpen(false)}
                 >
                   {label[lang]}
-                </Link>
+                </NavLink>
               </li>
             ))}
           </ul>

@@ -1,0 +1,10 @@
+/* Page wrapper: clears the fixed navbar and drops the inter-section dividers
+   that only made sense when everything stacked on one scroll. */
+.page {
+  padding-top: var(--navbar-h);
+  min-height: 100vh;
+}
+
+.page > section:not(.home-about) {
+  border-top: none;
+}
