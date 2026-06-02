@@ -7,7 +7,6 @@ import About from './components/About/About'
 import Founder from './components/Founder/Founder'
 import Experience from './components/Experience/Experience'
 import Projects from './components/Projects/Projects'
-import Skills from './components/Skills/Skills'
 import Contact from './components/Contact/Contact'
 import CaramelCaseStudy from './components/CaseStudy/CaramelCaseStudy'
 import InterOcciCaseStudy from './components/CaseStudy/InterOcciCaseStudy'
@@ -36,7 +35,6 @@ function App() {
               <About />
               <Founder />
               <Experience />
-              <Skills />
               <Contact />
             </main>
           </>

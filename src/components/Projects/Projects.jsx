@@ -25,6 +25,14 @@ const PROJECTS = [
     caseStudy: '/projects/interocci',
     thumbnail: interocciThumb,
   },
+  {
+    id: 3,
+    title: 'Meve',
+    description:
+      'My next AI product — currently in the build. More to share soon. Launching 2026.',
+    tags: ['AI', 'SaaS', 'In progress'],
+    comingSoon: true,
+  },
 ]
 
 export default function Projects() {
@@ -47,8 +55,14 @@ export default function Projects() {
                   aria-label={`View ${project.title} case study`}
                 />
               )}
-              <div className="project-thumb">
-                <img src={project.thumbnail} alt={project.title} />
+              <div
+                className={`project-thumb${project.thumbnail ? '' : ' project-thumb--placeholder'}`}
+              >
+                {project.thumbnail ? (
+                  <img src={project.thumbnail} alt={project.title} />
+                ) : (
+                  <span className="project-thumb-badge">Coming Soon</span>
+                )}
               </div>
               <div className="project-card-top">
                 <h3 className="project-title">{project.title}</h3>
@@ -62,23 +76,29 @@ export default function Projects() {
                   ))}
                 </div>
                 <div className="project-links">
-                  <a
-                    href={project.live}
-                    className="project-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Live ↗
-                  </a>
-                  {project.github && (
-                    <a
-                      href={project.github}
-                      className="project-link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      GitHub ↗
-                    </a>
+                  {project.comingSoon ? (
+                    <span className="project-link project-link--soon">Coming Soon</span>
+                  ) : (
+                    <>
+                      <a
+                        href={project.live}
+                        className="project-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Live ↗
+                      </a>
+                      {project.github && (
+                        <a
+                          href={project.github}
+                          className="project-link"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          GitHub ↗
+                        </a>
+                      )}
+                    </>
                   )}
                 </div>
                 {project.caseStudy && (

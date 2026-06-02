@@ -31,7 +31,7 @@ export default function CaramelCaseStudy() {
         <div className="cs-stats">
           <span className="cs-stat">Live in Production</span>
           <span className="cs-stat">Paying Subscribers</span>
-          <span className="cs-stat">Built Solo</span>
+          <span className="cs-stat">Co-founder/CTO</span>
           <span className="cs-stat">AI SaaS</span>
         </div>
 

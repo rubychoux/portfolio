@@ -8,6 +8,12 @@ const CONTACT_LINKS = [
     external: false,
   },
   {
+    label: 'Instagram',
+    display: 'instagram.com/rubychoux',
+    href: 'https://instagram.com/rubychoux',
+    external: true,
+  },
+  {
     label: 'LinkedIn',
     display: 'linkedin.com/in/rubychoux',
     href: 'https://linkedin.com/in/rubychoux',

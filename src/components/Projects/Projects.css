@@ -118,6 +118,30 @@
   transform: scale(1.03);
 }
 
+/* ─── Placeholder thumbnail (coming soon) ────────────────────────────── */
+.project-thumb--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    rgba(124, 106, 247, 0.18) 0%,
+    var(--color-surface-2) 70%
+  );
+}
+
+.project-thumb-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.project-link--soon {
+  color: var(--color-accent);
+}
+
 /* ─── Case study hint ────────────────────────────────────────────────── */
 .project-case-study-hint {
   font-size: 0.75rem;

@@ -10,13 +10,15 @@ export default function Hero() {
           <p className="hero-eyebrow">Ruby Choux Kim</p>
 
           <h1 className="hero-headline">
-            <span>AI Founder.</span>
-            <span>Building Caramel Lab.</span>
+            <span>Entrepreneur.</span>
+            <span>Engineer.</span>
+            <span>Creator.</span>
           </h1>
 
           <p className="hero-subtext">
-            Georgia Tech CS grad building AI products end-to-end. Currently founder of Caramel Lab,
-            a live AI SaaS — previously raised $30K with InterOcci.
+            Georgia Tech CS grad and serial entrepreneur building AI products end-to-end. Caramel Lab
+            is live with paying users, Meve is coming soon — and I share the journey with 50K+ on
+            Instagram. Previously raised $30K with InterOcci.
           </p>
 
           <div className="hero-ctas">

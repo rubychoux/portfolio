@@ -23,11 +23,13 @@ export default function About() {
               received a Presidential Undergraduate Research Award for the project.
             </p>
             <p>
-              Today I'm a founder who builds AI products myself. I designed, shipped, and now
-              operate Caramel Lab — a live AI SaaS for STEM and science students in Korea. I wrote
-              the entire stack solo, from the Google Gemini pipelines that power its AI features to
-              the payment and subscription system behind them. I'm not a founder who hands the
-              building to someone else — I'm a founder who can build it.
+              Today I wear a few hats. I'm a founder who builds AI products myself — I designed,
+              shipped, and now operate Caramel Lab, a live AI SaaS for STEM and science students in
+              Korea, with Meve launching next. I wrote the entire stack solo, from the Google Gemini
+              pipelines that power its AI features to the payment and subscription system behind them.
+              And I'm a creator: I share the building, the founder life, and everything in between
+              with a community of 50K+ on Instagram. I'm not a founder who hands the building to
+              someone else — I'm a founder who can build it, and tell the story too.
             </p>
           </div>
 
@@ -36,7 +38,8 @@ export default function About() {
               <p className="about-card-title">Currently</p>
               <ul className="about-card-list">
                 <li>Founder, Caramel Lab — live AI SaaS</li>
-                <li>Building in AI for education & science</li>
+                <li>Building Meve — launching soon</li>
+                <li>Creator — 50K+ on Instagram</li>
                 <li>Based in Seoul, Korea</li>
               </ul>
             </div>

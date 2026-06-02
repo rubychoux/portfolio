@@ -28,6 +28,33 @@
   justify-content: space-between;
 }
 
+/* ─── Left group (logo + socials) ────────────────────────────────────── */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+/* ─── Social icons ───────────────────────────────────────────────────── */
+.navbar-socials {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.navbar-social {
+  display: flex;
+  align-items: center;
+  color: var(--color-text-muted);
+  transition: color var(--transition), transform var(--transition);
+}
+
+.navbar-social:hover {
+  color: var(--color-text);
+  transform: translateY(-1px);
+}
+
 /* ─── Logo ───────────────────────────────────────────────────────────── */
 .navbar-logo {
   font-size: 0.9rem;
